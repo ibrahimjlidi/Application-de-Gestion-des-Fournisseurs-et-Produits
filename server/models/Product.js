@@ -24,13 +24,18 @@ const productSchema = new mongoose.Schema({
         default: 0
     },
     category: {
-        type: String,
-        trim: true
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Category',
+        required: true
     },
     supplier: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Supplier',
+        ref: 'User',
         required: true
+    },
+    type: {
+        type: String,
+        trim: true
     }
 }, {
     timestamps: true
