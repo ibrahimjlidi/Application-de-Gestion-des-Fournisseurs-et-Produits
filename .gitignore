@@ -1,2 +1,21 @@
+# Node modules
 node_modules/
+client/node_modules/
+server/node_modules/
+
+# Logs
+*.log
+
+# Dependency directories
+client/package-lock.json
+server/package-lock.json
+
+# Build output
+dist/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db
+
 .env
