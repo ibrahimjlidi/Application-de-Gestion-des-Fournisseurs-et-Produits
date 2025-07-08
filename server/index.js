@@ -18,11 +18,15 @@ app.use('/api/categories', require('./routes/categories'));
 app.use('/api/orders', require('./routes/orders'));
 app.use('/api/deliveries', require('./routes/deliveries'));
 
-const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/gestion-fournisseurs";
-
-mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log("MongoDB connected"))
-    .catch(err => console.log(err));
+mongoose.connect(
+  'mongodb+srv://ibrahimjlidi23:MzOuX9mczl5YUzYV@cluster0.sw0fuef.mongodb.net/gestion-fournisseurs?retryWrites=true&w=majority&appName=Cluster0',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+)
+.then(() => console.log('MongoDB connected'))
+.catch(err => console.error('MongoDB connection error:', err));
 
 app.get('/', (req, res) => {
     res.send('API is running...');
